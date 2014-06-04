@@ -1,0 +1,25 @@
+[{
+    "id":1,
+    "date":"03/01/1970",
+    "white":"Karpov",
+    "black":"Kasparov",
+    "opening":"Sicilian Defense",
+    "result":"white",
+    "synopsis":"very boring match...."
+},{
+    "id":2,
+    "date":"02/01/1970",
+    "white":"Deep Blue",
+    "black":"Kasparov",
+    "opening":"Sicilian Defense",
+    "result":"white",
+    "synopsis":"great match...."
+},{
+    "id":1,
+    "date":"01/01/1970",
+    "white":"Lasker",
+    "black":"Bauer",
+    "opening":"Nimzovich gambit",
+    "result":"white",
+    "synopsis":"interesting match...."
+}]

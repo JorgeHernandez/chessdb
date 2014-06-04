@@ -8,8 +8,13 @@
     <script src="js/controllers.js"></script>
 </head>
 <body ng-controller="GameListCtrl">
+    Sort by:
+    <select ng-model="gameOrder">
+        <option value="id">Id</option>
+        <option value="date">Date</option>
+    </select>
     <ul>
-    <li ng-repeat="game in games">
+    <li ng-repeat="game in games | orderBy:gameOrder">
       {{game.date}}: {{game.white}} - {{game.black}}
     </li>
   </ul>
