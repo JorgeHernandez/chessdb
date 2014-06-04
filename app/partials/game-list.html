@@ -1,0 +1,12 @@
+<b>Game List</b>
+<br />
+Sort by:
+<select ng-model="gameOrder">
+    <option value="id">Id</option>
+    <option value="date">Date</option>
+</select>
+<ul>
+<li ng-repeat="game in games | orderBy:gameOrder">
+  <a href="#/game/{{game.id}}">{{game.date}}: {{game.white}} - {{game.black}}</a>
+</li>
+</ul>
