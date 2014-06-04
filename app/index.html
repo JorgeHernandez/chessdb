@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="en" ng-app="chessdbApp">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/app.css">
+    <script src="../vendors/angular/angular.js"></script>
+    <script src="js/controllers.js"></script>
+</head>
+<body ng-controller="GameListCtrl">
+    <ul>
+    <li ng-repeat="game in games">
+      {{game.date}}: {{game.white}} - {{game.black}}
+    </li>
+  </ul>
+</body>
+</html>
