@@ -2,6 +2,6 @@ detail view for game {{id}}
 <br />
 <ul>
   <li ng-repeat="move in movements | orderBy:order">
-    {{move.order}}: {{move.white}} - {{move.black}}
+    {{move.order}}: <div class='movement' ng-click="sayHello(id,move.order,'white')">{{move.white}}</div> - <div class='movement' ng-click="sayHello(id,move.order,'black')">{{move.black}}</div></p>
   </li>
 </ul>

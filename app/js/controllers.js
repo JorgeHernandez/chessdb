@@ -20,5 +20,10 @@ chessdbControllers.controller('GameDetailCtrl', [
         $http.get('data/game_' + $routeParams.id + '.json').success(function(data) {
             $scope.movements = data;
         });
+
+    $scope.sayHello = function(id,moveOrder,colour){
+        alert('hello game: '+id+' move: '+moveOrder+' colour: '+colour);
+    }
+
     }
 ]);
