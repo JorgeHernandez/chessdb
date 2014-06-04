@@ -1,1 +1,7 @@
 detail view for game {{id}}
+<br />
+<ul>
+  <li ng-repeat="move in movements | orderBy:order">
+    {{move.order}}: {{move.white}} - {{move.black}}
+  </li>
+</ul>

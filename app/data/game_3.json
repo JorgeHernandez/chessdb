@@ -1,0 +1,33 @@
+[{
+    "order":1,
+    "white":"f4",
+    "black":"d5"
+},{
+    "order":2,
+    "white":"e3",
+    "black":"Nf6"
+},{
+    "order":3,
+    "white":"b3",
+    "black":"e6"
+},{
+    "order":4,
+    "white":"Bb2",
+    "black":"Be7"
+},{
+    "order":5,
+    "white":"Bd3",
+    "black":"b6"
+},{
+    "order":6,
+    "white":"Nc3",
+    "black":"Bb7"
+},{
+    "order":7,
+    "white":"Nf3",
+    "black":"Nbd7"
+},{
+    "order":8,
+    "white":"0-0",
+    "black":"..."
+}]
