@@ -1,33 +1,49 @@
 [{
     "order":1,
     "white":"f4",
-    "black":"d5"
+    "black":"d5",
+    "whiteboard":"",
+    "blackboard":""
 },{
     "order":2,
     "white":"e3",
-    "black":"Nf6"
+    "black":"Nf6",
+    "whiteboard":"",
+    "blackboard":""
 },{
     "order":3,
     "white":"b3",
-    "black":"e6"
+    "black":"e6",
+    "whiteboard":"",
+    "blackboard":""
 },{
     "order":4,
     "white":"Bb2",
-    "black":"Be7"
+    "black":"Be7",
+    "whiteboard":"",
+    "blackboard":""
 },{
     "order":5,
     "white":"Bd3",
-    "black":"b6"
+    "black":"b6",
+    "whiteboard":"",
+    "blackboard":""
 },{
     "order":6,
     "white":"Nc3",
-    "black":"Bb7"
+    "black":"Bb7",
+    "whiteboard":"",
+    "blackboard":""
 },{
     "order":7,
     "white":"Nf3",
-    "black":"Nbd7"
+    "black":"Nbd7",
+    "whiteboard":"",
+    "blackboard":""
 },{
     "order":8,
     "white":"0-0",
-    "black":"..."
+    "black":"...",
+    "whiteboard":"",
+    "blackboard":""
 }]

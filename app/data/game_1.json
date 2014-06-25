@@ -1,33 +1,49 @@
 [{
     "order":1,
     "white":"d4",
-    "black":"Nf6"
+    "black":"Nf6",
+    "whiteboard":"rnbqkbnr/pppppppp/8/8/4P3/8/PPPP1PPP/RNBQKBNR",
+    "blackboard":"rnbqkbnr/pp1ppppp/8/2p5/4P3/8/PPPP1PPP/RNBQKBNR"
 },{
     "order":2,
     "white":"c4",
-    "black":"e6"
+    "black":"e6",
+    "whiteboard":"rnbqkbnr/pp1ppppp/8/2p5/4P3/5N2/PPPP1PPP/RNBQKB1R",
+    "blackboard":""
 },{
     "order":3,
     "white":"Nc3",
-    "black":"Bb4"
+    "black":"Bb4",
+    "whiteboard":"",
+    "blackboard":""
 },{
     "order":4,
     "white":"e3",
-    "black":"d5"
+    "black":"d5",
+    "whiteboard":"",
+    "blackboard":""
 },{
     "order":5,
     "white":"a3",
-    "black":"Bxc3+"
+    "black":"Bxc3+",
+    "whiteboard":"",
+    "blackboard":""
 },{
     "order":6,
     "white":"bxc3",
-    "black":"c5"
+    "black":"c5",
+    "whiteboard":"",
+    "blackboard":""
 },{
     "order":7,
     "white":"cxd5",
-    "black":"exd5"
+    "black":"exd5",
+    "whiteboard":"",
+    "blackboard":""
 },{
     "order":8,
     "white":"Bd3",
-    "black":"..."
+    "black":"...",
+    "whiteboard":"",
+    "blackboard":""
 }]

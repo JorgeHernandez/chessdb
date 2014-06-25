@@ -1,6 +1,7 @@
 var chessdbApp = angular.module('chessdbApp', [
   'ngRoute',
-  'chessdbControllers'
+  'chessdbControllers',
+  'ngGrid'
 ]);
 
 chessdbApp.config(['$routeProvider',
@@ -13,6 +14,10 @@ chessdbApp.config(['$routeProvider',
       when('/game/:id', {
         templateUrl: 'partials/game-detail.html',
         controller: 'GameDetailCtrl'
+      }).
+      when('/grid', {
+        templateUrl: 'partials/grid.html',
+        controller: 'GridCtrl'
       }).
       otherwise({
         redirectTo: '/games'
