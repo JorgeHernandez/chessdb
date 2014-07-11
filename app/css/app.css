@@ -16,3 +16,7 @@
 .selectedItems{
     background: grey;
 }
+
+.error{
+    color: #F00;
+}

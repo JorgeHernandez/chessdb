@@ -1,0 +1,13 @@
+{{loggedin}}
+<!-- mostrar una cosa u otra de acuerdo al estado de una variable del scope -->
+<div ng-show="!loggedin">No logueado
+    <form name="loginForm" ng-submit="login(credentials)" novalidate>
+      <label for="username">Username:</label>
+      <input type="text" id="username" ng-model="credentials.username">
+      <label for="password">Password:</label>
+      <input type="password" id="password" ng-model="credentials.password">
+      <button type="submit">Login</button>
+    </form>
+</div>
+
+<div ng-show="loggedin">logueado</div>

@@ -1,5 +1,40 @@
 var chessdbControllers = angular.module('chessdbControllers', []);
 
+
+//DEPRECATED
+chessdbControllers.controller('LoginCtrl',['$scope','AUTH_EVENTS',
+    function ($scope) {
+        $scope.credentials = {
+            username: '',
+            password: ''
+        };
+
+        //probando ng-view
+        $scope.loggedIn = false;
+
+        $scope.login = function (credentials,$location) {
+            //alert('WTF'+MI_CONSTANTE);//Can't access constant!!!!!!
+            loggedIn = false;
+
+            //replace this with a service
+            if(credentials.username=='admin'&&credentials.password=='1234'){
+                //alert('access granted '+credentials.username);
+                $scope.loggedIn = true;
+            }
+//*
+//ellocation no funciona. No puede setear path de undefined
+            if(loggedIn==true){
+                //$location.path("/games");
+            } else {
+                //$location.path("/login");
+            }
+//*/
+        };
+    }
+]);
+
+
+//DEPRECATED
 chessdbControllers.controller('GameListCtrl', [
     '$scope', 
     '$http',
@@ -11,6 +46,7 @@ chessdbControllers.controller('GameListCtrl', [
     }
 ]);
 
+//DEPRECATED
 chessdbControllers.controller('GameDetailCtrl', [
     '$scope', 
     '$routeParams', 
@@ -37,11 +73,43 @@ chessdbControllers.controller('GameDetailCtrl', [
 chessdbControllers.controller('GridCtrl', [
     '$scope',
     '$http',
-    function($scope,$http){
+    'AuthFactory',
+    'USER_ROLES','AUTH_EVENTS',
+    function($scope,$http,AuthFactory,USER_ROLES,AUTH_EVENTS){
+
+someData = AuthFactory.getData();
+console.dir(someData);
+console.log('=============');
+console.dir(AUTH_EVENTS);//HAY QUE INYECTARLO EN EL CONROLLER CON COMILLAS Y LUEGO PASAR EL PARAM  EN LA FUNCION!!!!!!!!!!!!!!
+
+
+
+        //user login
+        $scope.credentials = {
+            username: '',
+            password: ''
+        };
+
+
+        /*
+        $scope.loggedIn = false;
+
+        $scope.login = function (credentials,$location) {
+            loggedIn = false;
+            if(credentials.username=='admin'&&credentials.password=='1234'){
+                $scope.loggedIn = true;
+                $scope.username = credentials.username;
+            }
+        };
+        */
+        $scope.login = function (credentials,$location) {
+            test = AuthFactory.login(credentials);
+            console.dir(test);
+        }
+
 
         //init chessboard
         var board1 = new ChessBoard('board1', {position:'start',showNotation: true});
-         
 
         //var ruyLopez = 'r1bqkbnr/pppp1ppp/2n5/1B2p3/4P3/5N2/PPPP1PPP/RNBQK2R';
         //var board1 = new ChessBoard('board1', ruyLopez);
@@ -96,6 +164,13 @@ chessdbControllers.controller('GridCtrl', [
         };
     }
 
+]);
+
+chessdbControllers.controller('ErrorCtrl', [
+    '$scope', 
+    function ($scope) {
+        $scope.errorMsg = "The requested url doesn't exist";
+    }
 ]);
 
 
