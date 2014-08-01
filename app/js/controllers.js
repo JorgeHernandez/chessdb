@@ -1,74 +1,10 @@
 var chessdbControllers = angular.module('chessdbControllers', []);
 
 
-//DEPRECATED
-chessdbControllers.controller('LoginCtrl',['$scope','AUTH_EVENTS',
-    function ($scope) {
-        $scope.credentials = {
-            username: '',
-            password: ''
-        };
-
-        //probando ng-view
-        $scope.loggedIn = false;
-
-        $scope.login = function (credentials,$location) {
-            //alert('WTF'+MI_CONSTANTE);//Can't access constant!!!!!!
-            loggedIn = false;
-
-            //replace this with a service
-            if(credentials.username=='admin'&&credentials.password=='1234'){
-                //alert('access granted '+credentials.username);
-                $scope.loggedIn = true;
-            }
-//*
-//ellocation no funciona. No puede setear path de undefined
-            if(loggedIn==true){
-                //$location.path("/games");
-            } else {
-                //$location.path("/login");
-            }
-//*/
-        };
-    }
-]);
-
-
-//DEPRECATED
-chessdbControllers.controller('GameListCtrl', [
-    '$scope', 
-    '$http',
-    function ($scope, $http) {
-        $http.get('data/games.json').success(function(data) {
-            $scope.games = data;
-        });
-        $scope.gameOrder = 'id';
-    }
-]);
-
-//DEPRECATED
-chessdbControllers.controller('GameDetailCtrl', [
-    '$scope', 
-    '$routeParams', 
-    '$http',
-    function($scope, $routeParams,$http) {
-        $scope.id = $routeParams.id;
-        $http.get('data/game_' + $routeParams.id + '.json').success(function(data) {
-            $scope.movements = data;
-        });
-
-        //init chessboard
-        var board1 = new ChessBoard('board1', {position:'start',showNotation: true});
-
-        $scope.updateBoard = function(position){
-            board1.position({
-                a4: 'bK',
-                c4: 'wK',
-                a7: 'wR'
-            });
-        }
-    }
-]);
+//this controller applies to the navbar, besides the routing
+chessdbControllers.controller('testCtrl',['$scope',function($scope){
+    $scope.test = 'zzz';
+}]);
 
 chessdbControllers.controller('GridCtrl', [
     '$scope',
@@ -77,19 +13,16 @@ chessdbControllers.controller('GridCtrl', [
     'USER_ROLES','AUTH_EVENTS',
     function($scope,$http,AuthFactory,USER_ROLES,AUTH_EVENTS){
 
-someData = AuthFactory.getData();
-console.dir(someData);
+/*
+console.log('AUTH_EVENTS');
+console.dir(AUTH_EVENTS);//HAY QUE INYECTARLO EN EL CONTROLLER CON COMILLAS Y LUEGO PASARLO EN LOS PARAM DE LA FUNCION SIN COMILLAS !!!!!!!!!!!!!!
 console.log('=============');
-console.dir(AUTH_EVENTS);//HAY QUE INYECTARLO EN EL CONROLLER CON COMILLAS Y LUEGO PASAR EL PARAM  EN LA FUNCION!!!!!!!!!!!!!!
-
-
-
+*/
         //user login
         $scope.credentials = {
             username: '',
             password: ''
         };
-
 
         /*
         $scope.loggedIn = false;
@@ -104,7 +37,7 @@ console.dir(AUTH_EVENTS);//HAY QUE INYECTARLO EN EL CONROLLER CON COMILLAS Y LUE
         */
         $scope.login = function (credentials,$location) {
             test = AuthFactory.login(credentials);
-            console.dir(test);
+            //console.dir(test);
         }
 
 
@@ -250,3 +183,37 @@ app.controller('MyCtrl', function($scope, $http) {
     };
 });
 */
+
+
+
+
+//DEPRECATED
+chessdbControllers.controller('LoginCtrl',['$scope','AUTH_EVENTS',
+    function ($scope) {
+        $scope.credentials = {
+            username: '',
+            password: ''
+        };
+
+        //probando ng-view
+        $scope.loggedIn = false;
+
+        $scope.login = function (credentials,$location) {
+            loggedIn = false;
+
+            //replace this with a service
+            if(credentials.username=='admin'&&credentials.password=='1234'){
+                //alert('access granted '+credentials.username);
+                $scope.loggedIn = true;
+            }
+//*
+//ellocation no funciona. No puede setear path de undefined
+            if(loggedIn==true){
+                //$location.path("/games");
+            } else {
+                //$location.path("/login");
+            }
+//*/
+        };
+    }
+]);

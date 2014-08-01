@@ -5,8 +5,8 @@ var chessdbApp = angular.module('chessdbApp', [
 ]);
 
 /*
-http://localhost:8000/chessdb/app/#/login
-http://localhost:8000/chessdb/app/#/grid
+http://localhost:8000/#/login
+http://localhost:8000/#/grid
 */
 chessdbApp.config(['$routeProvider',
   function($routeProvider) {
@@ -53,47 +53,56 @@ chessdbApp.constant('USER_ROLES', {
 });
 
 chessdbApp.factory('AuthFactory', function ($http, Session,USER_ROLES,AUTH_EVENTS) {
-  console.dir(AUTH_EVENTS);
-  console.dir(USER_ROLES);
+    
+    var factory = {};
 
-  var factory = {};
+    factory.login = function (credentials) {
+        /*
+        console.log('USER_ROLES');
+        console.dir(USER_ROLES);
+        console.log('credentials');
+        console.dir(credentials);
+        //*/
 
-  var someData = [
-    {name:'john'},
-    {name: 'mary'},
-    {name: 'paul'}
-  ];
-  factory.getData = function () {
-    return someData;
-  }
+        /*
+        //return $http.get('http://localhost:8080/chessdb/api/index.php/login').success(function(data){
+        return $http.get('http://localhost:8000/api/login').success(function(data){
+            console.log('data');
+            console.dir(data);
+            //$scope.data = data;
+            return true;
+        }).error(function(){
+            console.log('HTTP get error. Cannot reach rest API');
+        });
+        */
 
-  factory.login = function (credentials) {
-    console.dir('USER_ROLES');
-    /*
-    return $http
-      .post('/login', credentials)
-      .then(function (res) {
-        Session.create(res.id, res.userid, res.role);
-      });
-    */
-    return credentials;
-  }
-  factory.isAuthenticated = function () {
-    //return !!Session.userId;
-    return true;
-  }
-  factory.isAuthorized = function () {
-    /*
-    if (!angular.isArray(authorizedRoles)) {
-      authorizedRoles = [authorizedRoles];
+        return $http
+        .get('http://localhost:8000/api/login', credentials)
+        .then(function (res) {
+            Session.create(res.id, res.userid, res.role);
+            console.log('res');
+            console.dir(res.data);
+            console.dir(Session);
+        });
+
+        return credentials;
     }
-    return (this.isAuthenticated() &&
-      authorizedRoles.indexOf(Session.userRole) !== -1);
-    */
-    return true;
-  }
-  return factory;
+
+    factory.isAuthenticated = function () {
+        return !!Session.userId;
+    }
+
+    factory.isAuthorized = function () {
+        if (!angular.isArray(authorizedRoles)) {
+            authorizedRoles = [authorizedRoles];
+        }
+        return (this.isAuthenticated() &&
+            authorizedRoles.indexOf(Session.userRole) !== -1);
+    }
+
+    return factory;
 });
+
 
 chessdbApp.service('Session', function () {
     this.create = function (sessionId, userId, userRole) {

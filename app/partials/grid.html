@@ -1,3 +1,7 @@
+<!-- besides the ng-router, it is possible to assign a controller to a container -->
+<div ng-controller="testCtrl">{{test}}</div>
+
+
 <div ng-show="!loggedIn">
     <form name="loginForm" ng-submit="login(credentials)" novalidate>
       <label for="username">Username:</label>
@@ -7,7 +11,6 @@
       <button type="submit">Login</button>
     </form>
 </div>
-
 
 
 <div ng-show="loggedIn">
