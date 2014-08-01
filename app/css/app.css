@@ -1,0 +1,22 @@
+.movement{
+    cursor: pointer;
+    display: inline-block;
+}
+
+.movement:hover{
+    background: lightgrey;
+}
+
+.gridStyle {
+    border: 1px solid rgb(212,212,212);
+    width: 600px;
+    height: 300px
+}
+
+.selectedItems{
+    background: grey;
+}
+
+.error{
+    color: #F00;
+}

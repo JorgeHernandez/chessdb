@@ -1,25 +1,25 @@
 [{
     "id":1,
-    "date":"03/01/1970",
-    "white":"Karpov",
-    "black":"Kasparov",
-    "opening":"Sicilian Defense",
+    "date":"03/01/1938",
+    "white":"Botvinnik",
+    "black":"Capablanca",
+    "opening":"Nimzo-Indian Defense",
     "result":"white",
-    "synopsis":"very boring match...."
+    "synopsis":"played at the AVRO 1938 tournament between future World Champion Mikhail Botvinnik (as White) and past World Champion José Raúl Capablanca (as Black), won by Botvinnik"
 },{
     "id":2,
-    "date":"02/01/1970",
+    "date":"10/01/1996",
     "white":"Deep Blue",
     "black":"Kasparov",
     "opening":"Sicilian Defense",
     "result":"white",
-    "synopsis":"great match...."
+    "synopsis":"The first game of the 1996 match was the first game to be won by a chess-playing computer against a reigning world champion under normal chess tournament conditions, and in particular, classical time controls"
 },{
     "id":3,
-    "date":"01/01/1970",
+    "date":"01/01/1889",
     "white":"Lasker",
     "black":"Bauer",
-    "opening":"Nimzovich gambit",
+    "opening":" Bird's Opening",
     "result":"white",
-    "synopsis":"interesting match...."
+    "synopsis":"The chess game between Emanuel Lasker and Johann Bauer played in Amsterdam in 1889 is one of the most famous on account of Lasker's sacrifice of both bishops to eliminate the pawn cover around his opponent's king, winning material and the gam"
 }]

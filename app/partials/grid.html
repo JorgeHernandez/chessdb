@@ -1,0 +1,40 @@
+<!-- besides the ng-router, it is possible to assign a controller to a container -->
+<div ng-controller="testCtrl">{{test}}</div>
+
+
+<div ng-show="!loggedIn">
+    <form name="loginForm" ng-submit="login(credentials)" novalidate>
+      <label for="username">Username:</label>
+      <input type="text" id="username" ng-model="credentials.username">
+      <label for="password">Password:</label>
+      <input type="password" id="password" ng-model="credentials.password">
+      <button type="submit">Login</button>
+    </form>
+</div>
+
+
+<div ng-show="loggedIn">
+    <div>Welcome {{username}}</div>
+
+    <div class="gridStyle" ng-grid="gridOptions"></div>
+
+    <div id="board1" style="width: 400px"></div>
+
+    <div class="selectedItems">
+        Date: {{selectedDate}}
+        <br>
+        White: {{selectedWhite}}
+        <br>
+        Black: {{selectedBlack}}
+    </div>
+
+    <div>
+        <ul>
+            <li ng-repeat="move in movements | orderBy:order">
+                {{move.order}}: 
+                <div class='movement' ng-click="updateBoard(move.whiteboard)">{{move.white}}</div> - 
+                <div class='movement' ng-click="updateBoard(move.blackboard)">{{move.black}}</div>
+            </li>
+        </ul>
+    </div>
+</div>
